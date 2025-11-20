@@ -6,17 +6,46 @@
 
   以上のルールに則った場合、Botの呼び出しをするテキストは以下の通りとなる。<br>
   @Malody Random Set Creator {Low}, {High}, {Basis}
-    
+
 ---
-### 1.難易度指定について
+
+### 1.基本的な使い方について
+- このbotを使いたい時は、上に書いてる"@Malody Random Set Creator {Low}, {High}, {Basis}"
+  っていう形で呼び出しをする
+
+  例えば32.5から34.5の間でランダムをかけたかったら、下限が32.5・上限が34.5になるから、
+  - @Malody Random Set Creator 32.5, 34.5
+
+  ってなるんだよね
+
+  {Basis}の部分だけど、これは判定基準("COOL以下◯個"とか、"GOOD以下◯個"とか、"MISS◯個"とか、"Acc平均◯◯%"とか)<br>
+  を入力することになってる<br>
+  
+  
+
+
+### 2.難易度指定について
 - 例えば難易度を不問にしたい(なんでもいい)場合<br>
   これについては、-1を入力すればよい。<br>
   例えば
-  - @Malody Random Set Creator -1, 34.1<br>
-  とすることで、34.1以下の全ての譜面を対象にすることができる<br>
-  ただこれだとWORLD'S ENDも対象になるので、それが嫌な人は2とか40とか入れよう
-
-- じゃあ逆にWORLD'S ENDだけに絞りたかったらどうするの？<br>
-  0を入れればいいんだけど、Low・High両方に0は入れてね(確認のために)<br>
-  @Malody Random Set Creator 0, 0
+  - @Malody Random Set Creator -1, -1<br>
   
+  とすることで、全ての譜面を対象にすることができる<br>
+  ただこれだとWORLD'S ENDも対象になるので、それが嫌な人は2とか40とか入れよう<br>
+
+  これを有効活用して、<br>
+  - @Malody Random Set Creator -1, 34.5<br>
+  
+  みたいなことをすると、「34.5以下の全ての譜面」が対象になったり<br>
+
+  - @Malody Random Set Creator 32.5, -1<br>
+  
+  ってすると、「32.5以上の全ての譜面」が対象になる
+
+  
+- じゃあ逆にWORLD'S ENDだけに絞りたかったらどうするの？<br>
+  そのときは<br>
+  - @Malody Random Set Creator 0, 0<br>
+  
+  みたいな感じで0を入れればいいんだけど、Low・High両方に0は入れてね(確認のために)<br>
+  ちなみに考え方としては、オンゲキでLUNATIC 0を指定するのと同じ(あれ実質WORLD'S ENDみたいなもんだろ)
